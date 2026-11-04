@@ -1,0 +1,320 @@
+
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b1120;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* Header and navigation */
+header {
+    background-color: #111c33;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    color: #38bdf8;
+    font-size: 22px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* General section styling */
+section {
+    padding: 80px 10%;
+    scroll-margin-top: 20px;
+}
+
+section h2 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+section p {
+    max-width: 700px;
+    font-size: 18px;
+}
+
+/* Home section */
+#home {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        #0b1120,
+        #172554
+    );
+}
+
+#home h2 {
+    font-size: 42px;
+    color: white;
+}
+
+#home p {
+    color: #94a3b8;
+}
+
+/* Alternating section backgrounds */
+#about {
+    background-color: #111c33;
+}
+
+#projects {
+    background-color: #0b1120;
+}
+
+#contact {
+    background-color: #111c33;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    #home h2 {
+        font-size: 30px;
+    }
+}
+
+/* Homepage greeting */
+.greeting {
+    color: #38bdf8 !important;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Engineering title */
+#home h3 {
+    color: #38bdf8;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Project button */
+.btn {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #0284c7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0369a1;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills-container span {
+    background-color: #1e293b;
+    padding: 12px 20px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+}
+
+/* Project layout */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit, minmax(min(100%, 280px), 1fr)
+    );
+    gap: 25px;
+}
+
+.project-card,
+.experience-card {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    margin-bottom: 20px;
+}
+
+.project-card h3,
+.experience-card h3 {
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.project-card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-4px);
+    transition: 0.3s;
+}
+
+/* Contact links */
+#contact a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Header controls */
+.header-controls {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.header-controls button {
+    background: #1e293b;
+    color: white;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Hide menu button on desktop */
+#menu-toggle {
+    display: none;
+}
+
+/* Back-to-top button */
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Light mode */
+body.light-mode {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+body.light-mode header,
+body.light-mode #about,
+body.light-mode #contact {
+    background: #e2e8f0;
+}
+
+body.light-mode #projects,
+body.light-mode #skills,
+body.light-mode #experience {
+    background: #f8fafc;
+}
+
+body.light-mode #home {
+    background: linear-gradient(135deg, #dbeafe, #f8fafc);
+}
+
+body.light-mode #home h2,
+body.light-mode #home p,
+body.light-mode nav a {
+    color: #0f172a;
+}
+
+body.light-mode .project-card,
+body.light-mode .experience-card,
+body.light-mode .skills-container span {
+    background: white;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+body.light-mode .header-controls button {
+    background: #cbd5e1;
+    color: #0f172a;
+}
+
+body.light-mode .greeting {
+    color: #0369a1 !important;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    #navigation {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #navigation.show {
+        display: flex;
+    }
+}
